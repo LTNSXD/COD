@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../pipeline/">
       
       
-        <link rel="next" href="../hazards/">
+        <link rel="next" href="../../U3/dram/">
       
       <link rel="icon" href="../../assets/favicon.jpg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Pipeline - Lecture Notes for Computer Organization and Design on 2023Fall</title>
+        <title>Hazards - Lecture Notes for Computer Organization and Design on 2023Fall</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cpu" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pipeline
+              Hazards
             
           </span>
         </div>
@@ -220,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../pipeline/" class="md-tabs__link md-tabs__link--active">
         第二单元
       </a>
     </li>
@@ -361,6 +361,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../pipeline/" class="md-nav__link">
+        Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -369,16 +383,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Pipeline
+          Hazards
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Pipeline
+        Hazards
       </a>
       
         
@@ -386,8 +398,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -398,29 +408,42 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    流水线操作的前提
+    控制冲突
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    流水线特性
+    控制冲突的处理
+  </a>
+  
+    <nav class="md-nav" aria-label="控制冲突的处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 暂停流水线
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    流水线概念
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 分支预测
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    指令流水阶段
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 控制冲突的动态调度
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -428,20 +451,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../hazards/" class="md-nav__link">
-        Hazards
-      </a>
     </li>
   
 
@@ -523,8 +532,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -534,29 +541,42 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    流水线操作的前提
+    控制冲突
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    流水线特性
+    控制冲突的处理
+  </a>
+  
+    <nav class="md-nav" aria-label="控制冲突的处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 暂停流水线
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    流水线概念
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 分支预测
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    指令流水阶段
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 控制冲突的动态调度
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -576,81 +596,151 @@
                   
 
 
-<h1 id="cpu">流水线CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h1>
-<p><img alt="" src="../assets/image-20231117175828891.png" /></p>
-<h2 id="_1">流水线操作的前提<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+  <h1>Hazards</h1>
+
+<h2 id="_1">控制冲突<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>任务</strong>分解成多个<strong>步骤</strong>完成</li>
-<li>每个<strong>步骤使用不同的资源</strong></li>
-<li>任务内部存在关联，完成每个<strong>任务</strong>的<strong>步骤顺序一致</strong></li>
-<li><strong>任务之间相互独立</strong>，没有依赖关系</li>
-</ul>
-<h2 id="_2">流水线特性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>流水线<strong>并没有缩短单个任务的延迟</strong>，但提高了整个系统的<strong>吞吐率</strong><ul>
-<li>吞吐率：单位时间执行任务的数量</li>
-</ul>
-</li>
-<li>多个任务同时运行，占用不同的资源</li>
-<li>可能的（理想的）<strong>加速比=流水段数</strong><ul>
-<li>考虑任务数趋于无穷的情况</li>
-</ul>
-</li>
-<li>流水线效率<strong>受限于用时最长的阶段</strong><ul>
-<li>所以我们需要尽可能均匀地切分任务</li>
-</ul>
-</li>
-<li>若每个阶段的用时不同，将降低流水线效率<ul>
-<li>？</li>
-</ul>
-</li>
+<li>是指流水线中的分支指令或者其他需要改写PC的指令造成的冲突。</li>
 </ul>
 <ul>
-<li>装入和排空流水线也可能降低加速比<ul>
-<li>装入：图中红框部分，各资源还没有被充分利用时</li>
-<li>排空：图中蓝框部分，各资源开始不再被使用</li>
+<li>包括无条件转移、条件转移、子程序调用、中断等。执行中可能改变程序的方向，从而造成流水线断流。</li>
+<li>数据冲突影响到的仅仅是附近少数几条指令，称为局部冲突。而控制冲突影响的范围要大得多，会引起程序执行方向的改变，称为全局冲突。</li>
+<li>当执行条件转移指令时，有两种可能结果：<ul>
+<li>改为目标结果</li>
+<li>+4</li>
 </ul>
 </li>
-<li><em>冲突将引起流水线的<strong>暂停</strong></em><ul>
-<li>暂停肯定能解决问题</li>
+<li>由于PC的缺失引发；条件转移和无条件转移指令</li>
+<li>所有指令都要在IF阶段用PC，所以对性能影响很大</li>
 </ul>
-</li>
-</ul>
-<h2 id="_3">流水线概念<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231125145425167.png" /></p>
 <ul>
-<li>计算机中的流水线是把一个重复的过程分解成若干个子过程，每个子过程与其他子过程并行进行。</li>
+<li>Use表示用pc，Produce表示生成新pc。对转移指令，至少要等到EXE阶段才能得到正确PC</li>
 </ul>
+<h2 id="_2">控制冲突的处理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>暂停流水线<ul>
+<li>直到拥有正确的转移地址，造成性能的降低</li>
+</ul>
+</li>
+<li>预测”分支不成功“<ul>
+<li>顺序执行下一条指令</li>
+<li>预测失败后要清楚错误启动的指令</li>
+</ul>
+</li>
+<li>预测”分支成功“<ul>
+<li>更复杂一些，因为要计算转移目的地址</li>
+<li>预测失败后要清除错误启动的指令</li>
+</ul>
+</li>
+<li>动态预测<ul>
+<li>硬件根据上次分支的结果进行本次预测（？）</li>
+</ul>
+</li>
+</ul>
+<h3 id="1">1. 暂停流水线<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>简单解决方法<ul>
+<li>一旦发现分支指令就暂停流水线，直到分支指令达到MEM段确定了新的PC为止。</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="image-20231125145956021.png" /></p>
+<p><strong>LYY：第二行的第二个Stall实际上是IF，也就是说我们需要重新取一次指。有可能是pc+4，有可能是跳转的地址。暂停了两个周期。</strong></p>
+<h3 id="2">2. 分支预测<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>减少暂停周期数<ul>
+<li>在流水线中尽早判断出分支转移是否成功</li>
+<li>尽早计算出分支成功转移时的PC值</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>一个例子：</li>
+</ul>
+<p><img alt="" src="image-20231125150401844.png" /></p>
 <ul>
 <li>
-<p>提高处理机内部的并行性</p>
+<p>减少分支延迟：</p>
 <ul>
-<li>空间并行性，在一个处理机内设置多个独立的操作部件，并使这些部件并行工作（比如把单周期CPU复制四份）；</li>
-<li>时间并行性，就是采用流水线技术。只需增加少量硬件就能把运算速度提高几倍。</li>
+<li>硬件在ID阶段就确定需要的信息，增加：<ul>
+<li>目标地址加法器</li>
+<li>寄存器比较器</li>
+</ul>
+</li>
+<li>例如：</li>
+</ul>
+<p><img alt="" src="image-20231125150916658.png" /></p>
+</li>
+</ul>
+<p>其数据通路图：</p>
+<p><img alt="" src="image-20231125150951975.png" /></p>
+<p>如果需要跳，原先的and操作被清除掉，变成一个NOP</p>
+<p><img alt="" src="image-20231125151059585.png" /></p>
+<p>这就是预测<strong>分支不成功</strong>。</p>
+<ul>
+<li>增加的部件<ul>
+<li>数据通路<ul>
+<li>增加比较器，完成源操作数的比较</li>
+<li>调整加法器到ID段，完成转移地址的计算</li>
+</ul>
+</li>
+<li>控制信号<ul>
+<li>根据比较结果，若相等则转移<ul>
+<li>PCsrc选择转移目标地址（PC &lt;- 目的地址）</li>
+<li>清除IF/ID段寄存器的值（IF/ID寄存器 &lt;- NOP）</li>
+<li>当前指令的控制信号为0（ID/EX寄存器 &lt;- 0）</li>
+</ul>
+</li>
+<li>若不等，则顺序执行<ul>
+<li>PCsrc选择顺序执行（PC &lt;- PC + 4）</li>
+<li>保留IF/ID段寄存器的值</li>
 </ul>
 </li>
 </ul>
+</li>
+<li>数据旁路？</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="image-20231125151742655.png" /></p>
+<p><img alt="" src="image-20231125151846086.png" /></p>
+<ul>
+<li>但比较器/加法器已经在ID阶段了（ID阶段已经知道跳不跳），所以第二张图其实已经不科学了。</li>
+<li>数据通路如下图所示，把比较器和一个加法器移到了ID阶段。</li>
+</ul>
+<p><img alt="" src="image-20231125152115370.png" /></p>
+<h3 id="3">3. 控制冲突的动态调度<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>分支目标缓冲技术（Branch Target Buffer）<ul>
+<li>缓冲区的每一项内容都被用来预测分支转移是否成功，并且根据实际的分支情况对内容进行修改。这种方法是基于如下的考虑：如果本次分支转移成功了，那么预测下一次分支转移也成功，例如一个循环体就是这种情况</li>
+<li>将分支转移成功的分支指令的地址和它的分支目标地址都放到一个缓冲区中保存起来，缓冲区以分支指令的地址作为标志；在取指令阶段，所有的指令地址都与保存的标志做比较，如果相同，就认为本条指令是分支指令，而为认为它分支转移成功，同步它的分支目标（下一条指令）地址就是保存在缓冲区的分支目标地址。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="c1">// ...</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+</code></pre></div>
+<p><img alt="" src="image-20231125154108135.png" /></p>
+<ul>
+<li>减少BTB容量</li>
+</ul>
+<p><img alt="" src="image-20231125154248739.png" /></p>
 <ul>
 <li>
-<p>计算机各个部分都可以采用流水线技术</p>
+<p>预测策略：</p>
 <ul>
-<li>指令流水线：指令的执行过程采用流水线</li>
-<li>操作部件流水线：运算器中的操作部件，如浮点加法器、浮点乘法器等可以采用流水线</li>
-<li>宏流水线：多个计算机之间，通过存储器连接，可以采用流水线</li>
+<li>如果上次跳转了，认为下次要跳转</li>
+<li>如果上次没跳转，认为下次不跳转</li>
 </ul>
+<p><img alt="" src="image-20231125154335389.png" /></p>
 </li>
 </ul>
-<h2 id="_4">指令流水阶段<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>一条指令的执行过程可以分为多个阶段：取指，分析（译码），执行。</p>
-<p><img alt="" src="../assets/2.jpg" /></p>
+<p><img alt="" src="image-20231125154436453.png" /></p>
+<p><img alt="" src="image-20231125154757599.png" /></p>
 <ul>
-<li>如果各阶段的时间相等，都为t，则n条指令所用的时间为：<ul>
-<li>顺序执行：<span class="arithmatex"><span class="MathJax_Preview">T=3nt</span><script type="math/tex">T=3nt</script></span></li>
-<li>一次重叠执行：<span class="arithmatex"><span class="MathJax_Preview">T=(1+2n)t</span><script type="math/tex">T=(1+2n)t</script></span></li>
-<li>两次重叠执行：<span class="arithmatex"><span class="MathJax_Preview">T=(n+2)t</span><script type="math/tex">T=(n+2)t</script></span></li>
-<li>注意<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>前的系数和常数的变化规律</li>
-</ul>
-</li>
-<li></li>
+<li>答案：10%， 80%（假设前者是预测不成功，后者第一次是先预测不成功）</li>
 </ul>
 
 
