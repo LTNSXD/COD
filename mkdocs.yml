@@ -1,10 +1,11 @@
-site_name: Lecture Notes for Computer Networks on 2023Fall
+site_name: Lecture Notes for Computer Organization and Design on 2023Fall
 
 nav:
   - 计算机组成原理:
     - index.md
   - 第二单元:
     - Pipeline: U2/pipeline.md
+    - Hazards: U2/hazards.md
   - 第三单元: 
     - DRAM: U3/dram.md
 
