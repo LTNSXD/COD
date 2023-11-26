@@ -6,6 +6,7 @@ nav:
   - 第二单元:
     - Pipeline: U2/pipeline.md
     - Hazards: U2/hazards.md
+    - Exception: U2/exception.md
   - 第三单元: 
     - DRAM: U3/dram.md
 
