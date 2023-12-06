@@ -12,6 +12,8 @@
         <link rel="prev" href="../../U2/exception/">
       
       
+        <link rel="next" href="../sram/">
+      
       <link rel="icon" href="../../assets/favicon.jpg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
@@ -424,6 +426,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -546,10 +552,52 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dram_1" class="md-nav__link">
+    DRAM的特点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sram/" class="md-nav__link">
+        SRAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cache/" class="md-nav__link">
+        CACHE
+      </a>
     </li>
   
 
@@ -653,6 +701,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dram_1" class="md-nav__link">
+    DRAM的特点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    总结
+  </a>
   
 </li>
       
@@ -814,9 +876,56 @@
 </li>
 </ul>
 <h3 id="_8">写时序<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>有两种：WE_L和CAS_L谁先被拉低？</li>
+<li>地址线上的Junk不会影响吗？</li>
+</ul>
 <p><img alt="" src="image-20231124122016011.png" /></p>
 <h3 id="_9">读时序<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>有两种：OE_L和CAS_L谁先被拉低？</li>
+</ul>
 <p><img alt="" src="image-20231124122236337.png" /></p>
+<h2 id="dram_1">DRAM的特点<a class="headerlink" href="#dram_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>存储容量高<ul>
+<li>单位存储单位面积小</li>
+</ul>
+</li>
+<li>访问速度慢<ul>
+<li>电容充电/放电慢</li>
+<li>需要刷新</li>
+</ul>
+</li>
+<li>能耗低？<ul>
+<li>静态能耗（比SRAM低）</li>
+<li>动态能耗（比SRAM高）</li>
+</ul>
+</li>
+<li>成本低</li>
+</ul>
+<h2 id="_10">总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li>1T1C：一个晶体管，一个电容</li>
+</ul>
+<ul>
+<li>写<ul>
+<li>往位线上送数据</li>
+<li>选择字线</li>
+</ul>
+</li>
+<li>读<ul>
+<li>将位线上置高电平</li>
+<li>选中字线</li>
+<li>感知电容是否放电并放大</li>
+<li>破坏性读（需要写回）</li>
+</ul>
+</li>
+<li>刷新<ul>
+<li>定期的批量读操作</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -826,7 +935,7 @@
     
         <div class="md-source-date">
             <small>
-                作者: <span class='git-page-authors git-authors'><a href='mailto:juanli-w21@mails.tsinghua.edu.cn'>汪隽立</a></span>
+                作者: <span class='git-page-authors git-authors'><a href='mailto:juanli-w21@mails.tsinghua.edu.cn'>汪隽立</a> (80.0%), <a href='mailto:not.committed.yet'>Not Committed Yet</a> (20.0%)</span>
             </small>
         </div>
     

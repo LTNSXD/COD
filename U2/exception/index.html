@@ -497,6 +497,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -519,6 +523,34 @@
     <li class="md-nav__item">
       <a href="../../U3/dram/" class="md-nav__link">
         DRAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../U3/sram/" class="md-nav__link">
+        SRAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../U3/cache/" class="md-nav__link">
+        CACHE
       </a>
     </li>
   
@@ -649,7 +681,7 @@
 <li>程序正常运行</li>
 <li>由硬件检测发生异常或中断</li>
 <li>“透明”地自动转换到服务程序进行响应和处理<ul>
-<li>保存现场</li>
+<li>保存现场（基本操作是，在异常程序计数器 (Exception Program Counter, EPC) 中保存出错指令的地址）</li>
 <li>启动服务程序</li>
 </ul>
 </li>
@@ -660,7 +692,10 @@
 </ul>
 <p><img alt="" src="image-20231126170222396.png" /></p>
 <ul>
-<li>保存异常的原因：mcause</li>
+<li>保存异常的原因：MIPS设置一个状态寄存器（称为<strong>Cause寄存器</strong>），其中有一个字段用于记录异常产生的原因。<ul>
+<li>另一种方法是使用向量中断（vectored interrupt），控制权被转移到由异常原因决定的地址处。</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -705,7 +740,7 @@
     
         <div class="md-source-date">
             <small>
-                作者: <span class='git-page-authors git-authors'><a href='mailto:juanli-w21@mails.tsinghua.edu.cn'>汪隽立</a></span>
+                作者: <span class='git-page-authors git-authors'><a href='mailto:juanli-w21@mails.tsinghua.edu.cn'>汪隽立</a> (95.0%), <a href='mailto:not.committed.yet'>Not Committed Yet</a> (5.0%)</span>
             </small>
         </div>
     

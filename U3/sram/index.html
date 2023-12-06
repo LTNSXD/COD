@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../dram/">
       
       
-        <link rel="next" href="../hazards/">
+        <link rel="next" href="../cache/">
       
       <link rel="icon" href="../../assets/favicon.jpg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Pipeline - Lecture Notes for Computer Organization and Design on 2023Fall</title>
+        <title>SRAM - Lecture Notes for Computer Organization and Design on 2023Fall</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cpu" class="md-skip">
+        <a href="#sram" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pipeline
+              SRAM
             
           </span>
         </div>
@@ -212,15 +212,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../U2/pipeline/" class="md-tabs__link">
         第二单元
       </a>
     </li>
@@ -230,13 +228,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../U3/dram/" class="md-tabs__link">
+      <a href="../dram/" class="md-tabs__link md-tabs__link--active">
         第三单元
       </a>
     </li>
@@ -326,16 +326,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
         
@@ -352,7 +350,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           第二单元
@@ -363,73 +361,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Pipeline
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../U2/pipeline/" class="md-nav__link">
         Pipeline
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    流水线操作的前提
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    流水线特性
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    流水线概念
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    指令流水阶段
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -441,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hazards/" class="md-nav__link">
+      <a href="../../U2/hazards/" class="md-nav__link">
         Hazards
       </a>
     </li>
@@ -455,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exception/" class="md-nav__link">
+      <a href="../../U2/exception/" class="md-nav__link">
         Exception
       </a>
     </li>
@@ -475,14 +411,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
         
@@ -499,7 +437,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           第三单元
@@ -512,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../U3/dram/" class="md-nav__link">
+      <a href="../dram/" class="md-nav__link">
         DRAM
       </a>
     </li>
@@ -524,11 +462,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../U3/sram/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SRAM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         SRAM
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sram_1" class="md-nav__link">
+    SRAM的组织方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sram_2" class="md-nav__link">
+    SRAM典型时序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    特点
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -540,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../U3/cache/" class="md-nav__link">
+      <a href="../cache/" class="md-nav__link">
         CACHE
       </a>
     </li>
@@ -581,29 +574,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sram_1" class="md-nav__link">
+    SRAM的组织方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sram_2" class="md-nav__link">
+    SRAM典型时序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    流水线操作的前提
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    流水线特性
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    流水线概念
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    指令流水阶段
+    特点
   </a>
   
 </li>
@@ -624,82 +610,25 @@
                   
 
 
-<h1 id="cpu">流水线CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h1>
-<p><img alt="" src="../assets/image-20231117175828891.png" /></p>
-<h2 id="_1">流水线操作的前提<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="sram">SRAM<a class="headerlink" href="#sram" title="Permanent link">&para;</a></h1>
+<p>“6T”，6个晶体管</p>
+<p><img alt="" src="image-20231207003044266.png" /></p>
+<h2 id="sram_1">SRAM的组织方式<a class="headerlink" href="#sram_1" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231207003334954.png" /></p>
 <ul>
-<li><strong>任务</strong>分解成多个<strong>步骤</strong>完成</li>
-<li>每个<strong>步骤使用不同的资源</strong></li>
-<li>任务内部存在关联，完成每个<strong>任务</strong>的<strong>步骤顺序一致</strong></li>
-<li><strong>任务之间相互独立</strong>，没有依赖关系</li>
+<li>Sense Amp：使读取更快</li>
 </ul>
-<h2 id="_2">流水线特性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="sram_2">SRAM典型时序<a class="headerlink" href="#sram_2" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231207003442022.png" /></p>
+<h2 id="_1">特点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>流水线<strong>并没有缩短单个任务的延迟</strong>，但提高了整个系统的<strong>吞吐率</strong><ul>
-<li>吞吐率：单位时间执行任务的数量</li>
+<li>速度快</li>
+<li>存储密度低，单位面积存储容量小（6T）</li>
+<li>数据入/出共用管脚</li>
+<li>能耗高</li>
+<li>成本高</li>
 </ul>
-</li>
-<li>多个任务同时运行，占用不同的资源</li>
-<li>可能的（理想的）<strong>加速比=流水段数</strong><ul>
-<li>考虑任务数趋于无穷的情况</li>
-</ul>
-</li>
-<li>流水线效率<strong>受限于用时最长的阶段</strong><ul>
-<li>所以我们需要尽可能均匀地切分任务</li>
-</ul>
-</li>
-<li>若每个阶段的用时不同，将降低流水线效率<ul>
-<li>？</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>装入和排空流水线也可能降低加速比<ul>
-<li>装入：图中红框部分，各资源还没有被充分利用时</li>
-<li>排空：图中蓝框部分，各资源开始不再被使用</li>
-</ul>
-</li>
-<li><em>冲突将引起流水线的<strong>暂停</strong></em><ul>
-<li>暂停肯定能解决问题</li>
-</ul>
-</li>
-</ul>
-<h2 id="_3">流水线概念<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>计算机中的流水线是把一个重复的过程分解成若干个子过程，每个子过程与其他子过程并行进行。</li>
-</ul>
-<ul>
-<li>
-<p>提高处理机内部的并行性</p>
-<ul>
-<li>空间并行性，在一个处理机内设置多个独立的操作部件，并使这些部件并行工作（比如把单周期CPU复制四份）；</li>
-<li>时间并行性，就是采用流水线技术。只需增加少量硬件就能把运算速度提高几倍。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p>计算机各个部分都可以采用流水线技术</p>
-<ul>
-<li>指令流水线：指令的执行过程采用流水线</li>
-<li>操作部件流水线：运算器中的操作部件，如浮点加法器、浮点乘法器等可以采用流水线</li>
-<li>宏流水线：多个计算机之间，通过存储器连接，可以采用流水线</li>
-</ul>
-</li>
-</ul>
-<h2 id="_4">指令流水阶段<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>一条指令的执行过程可以分为多个阶段：取指，分析（译码），执行。</p>
-<p><img alt="" src="../assets/2.jpg" /></p>
-<ul>
-<li>如果各阶段的时间相等，都为t，则n条指令所用的时间为：<ul>
-<li>顺序执行：<span class="arithmatex"><span class="MathJax_Preview">T=3nt</span><script type="math/tex">T=3nt</script></span></li>
-<li>一次重叠执行：<span class="arithmatex"><span class="MathJax_Preview">T=(1+2n)t</span><script type="math/tex">T=(1+2n)t</script></span></li>
-<li>两次重叠执行：<span class="arithmatex"><span class="MathJax_Preview">T=(n+2)t</span><script type="math/tex">T=(n+2)t</script></span></li>
-<li>注意<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>前的系数和常数的变化规律</li>
-</ul>
-</li>
-<li></li>
-</ul>
+<p><img alt="" src="image-20231207003700961.png" /></p>
 
 
 
@@ -709,7 +638,7 @@
     
         <div class="md-source-date">
             <small>
-                作者: <span class='git-page-authors git-authors'><a href='mailto:juanli-w21@mails.tsinghua.edu.cn'>汪隽立</a></span>
+                作者: <span class='git-page-authors git-authors'></span>
             </small>
         </div>
     
