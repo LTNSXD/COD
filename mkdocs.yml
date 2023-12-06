@@ -9,6 +9,8 @@ nav:
     - Exception: U2/exception.md
   - 第三单元: 
     - DRAM: U3/dram.md
+    - SRAM: U3/sram.md
+    - CACHE: U3/cache.md
 
 theme:
   name: material
