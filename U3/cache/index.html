@@ -575,6 +575,97 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    两路组相联方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_3" class="md-nav__link">
+    组相联Cache访问举例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    四路组相联
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    三种映射方式比较
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    一致性保证
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    提高存储访问的性能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_4" class="md-nav__link">
+    Cache缺失的四类原因
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_5" class="md-nav__link">
+    影响Cache命中率的因素
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    块大小的权衡
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    块替换策略
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_6" class="md-nav__link">
+    多级Cache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_7" class="md-nav__link">
+    Cache接入系统的体系结构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesi" class="md-nav__link">
+    多核一致性保证策略（MESI）
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -684,6 +775,97 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    两路组相联方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_3" class="md-nav__link">
+    组相联Cache访问举例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    四路组相联
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    三种映射方式比较
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    一致性保证
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    提高存储访问的性能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_4" class="md-nav__link">
+    Cache缺失的四类原因
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_5" class="md-nav__link">
+    影响Cache命中率的因素
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    块大小的权衡
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    块替换策略
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_6" class="md-nav__link">
+    多级Cache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache_7" class="md-nav__link">
+    Cache接入系统的体系结构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesi" class="md-nav__link">
+    多核一致性保证策略（MESI）
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -702,7 +884,6 @@
 
   <h1>CACHE</h1>
 
-<p># Cache</p>
 <h2 id="_1">程序的运行局部性原理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>在一小段<strong>时间</strong>内，<strong>最近被访问过的程序和数据很可能被再次访问</strong></li>
@@ -825,6 +1006,9 @@
 <p><img alt="" src="image-20231207015433070.png" /></p>
 <p>tag的位数逐渐降低（和全相连相比）</p>
 <p>查询过程：拿index去查，然后拿Tag去比（一样or不一样），如果一样，再看Valid与否。</p>
+<ul>
+<li>注意：直接映射的tag比全相连的tag短，所以相同大小能放的块更多！</li>
+</ul>
 <h2 id="cachedirect-mapping">Cache举例（Direct Mapping）<a class="headerlink" href="#cachedirect-mapping" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="image-20231207015741149.png" /></p>
 <p><img alt="" src="image-20231207015704602.png" /></p>
@@ -832,6 +1016,210 @@
 <li>解答：miss（存入0-15），miss（存入16-31），miss（存入32-47），hit，hit，hit，hit，miss（把0-15给替换），miss（把16-31给替换）</li>
 <li>失效原因：启动失效/冲突失效</li>
 </ul>
+<h2 id="_7">两路组相联方式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231207121549801.png" /></p>
+<ul>
+<li>原来一个2MB的Sram，分成两个1MB的直接映射</li>
+</ul>
+<ul>
+<li>特点<ul>
+<li>前两种方式的折衷方案。</li>
+<li>集中了两个方式的优点。成本也不太高。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>实际上，全相连是n-way组相联，n是cache的行数，直接映射是1-way组相联。<ul>
+<li>全相连和直接映射是它的特例</li>
+</ul>
+</li>
+</ul>
+<h2 id="cache_3">组相联Cache访问举例<a class="headerlink" href="#cache_3" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231207125743136.png" /></p>
+<h2 id="_8">四路组相联<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231207125846017.png" /></p>
+<ul>
+<li>块大小：4Bytes（2位offset）</li>
+<li>每一组有<span class="arithmatex"><span class="MathJax_Preview">2^8=256</span><script type="math/tex">2^8=256</script></span>个块，每个块大小为4Bytes+22位Tag+1位Valid</li>
+<li>上图的一横行叫做一个set，一个set中有4个way</li>
+</ul>
+<p><img alt="" src="image-20231207130257447.png" /></p>
+<p><img alt="" src="image-20231207130515397.png" /></p>
+<h2 id="_9">三种映射方式比较<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li>直接映射<ul>
+<li>主存中的一块只能映射到Cache中的唯一一个位置</li>
+<li>定位时，不需要判断，只需替换</li>
+</ul>
+</li>
+<li>全相连映射<ul>
+<li>主存中的一块可以映射到Cache中的任何一个位置</li>
+</ul>
+</li>
+<li>N路组相联映射<ul>
+<li>主存中的一块可以选择映射到Cache中N个位置</li>
+</ul>
+</li>
+<li>全相联映射和N路组相联映射的失效处理<ul>
+<li>从主存中取出新块</li>
+<li>为了腾出Cache空间，需要替换出一个Cache块</li>
+<li>替换出哪个块（替换策略）？</li>
+</ul>
+</li>
+</ul>
+<h2 id="_10">一致性保证<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li>写直达（Write through）<ul>
+<li>强一致性保证，效率低</li>
+<li>在Cache中命中<ul>
+<li>同时修改Cache和对应的主存内容</li>
+</ul>
+</li>
+<li>没有在Cache中命中<ul>
+<li>写分配（Write allocate）</li>
+<li>非写分配（not Write allocate）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>拖后写（Write back）（写回）<ul>
+<li>弱一致性保证（SRAM和DRAM中的数据很长时间内是不一样的），替换时再写主存<ul>
+<li>主动替换</li>
+<li>被动替换</li>
+</ul>
+</li>
+<li>通过监听总线上的访问操作来实现</li>
+<li>实现复杂，效率比较高</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>不命中：</li>
+</ul>
+<p><img alt="" src="image-20231207132051932.png" /></p>
+<p>LYY：No write allocate下的write invalidate这一列是在cache中找到了，且valid为1，那么写以后需要把valid置为0（因为cache没有更新）</p>
+<h2 id="_11">提高存储访问的性能<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li>平均访问时间=命中时间<span class="arithmatex"><span class="MathJax_Preview">\times</span><script type="math/tex">\times</script></span>命中率+缺失损失<span class="arithmatex"><span class="MathJax_Preview">\times</span><script type="math/tex">\times</script></span>缺失率<ul>
+<li><strong>提高命中率</strong></li>
+<li>缩短缺失损失</li>
+<li>提高Cache本身的速度</li>
+</ul>
+</li>
+</ul>
+<h2 id="cache_4">Cache缺失的四类原因<a class="headerlink" href="#cache_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>必然缺失（Compulsory Miss）<ul>
+<li>开机或是进程切换</li>
+<li>首次访问数据块</li>
+</ul>
+</li>
+<li>容量缺失（Capacity Miss）<ul>
+<li>活动数据集超出了Cache的大小</li>
+</ul>
+</li>
+<li>冲突缺失（Conflict Miss）<ul>
+<li>多个内存块映射到同一个Cache块</li>
+<li>某一Cache组块（Set）已满，但空闲的Cache块在其他组</li>
+</ul>
+</li>
+<li>无效缺失<ul>
+<li>其他进程修改了内容</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="image-20231207160403697.png" /></p>
+<ul>
+<li>增加Cache容量有助于缓解冲突（Hash冲突的概率更小了？）</li>
+</ul>
+<p><img alt="" src="image-20231207162759570.png" /></p>
+<h2 id="cache_5">影响Cache命中率的因素<a class="headerlink" href="#cache_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Cache容量<ul>
+<li>大容量可以提高命中率，但是增加了价格</li>
+</ul>
+</li>
+<li>Cache块大小</li>
+<li>地址映射方式<ul>
+<li>几路组相联？</li>
+</ul>
+</li>
+<li>替换算法<ul>
+<li>替换哪一行出去？</li>
+</ul>
+</li>
+<li>多级Cache</li>
+</ul>
+<p><img alt="" src="image-20231207164955717.png" /></p>
+<h2 id="_12">块大小的权衡<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231207165038719.png" /></p>
+<ul>
+<li>一般来说，数据块较大可以更好地利用空间局部性，但是：<ul>
+<li>数据块大意味着缺失损失的增大：<ul>
+<li>需要花费更长的时间来装入数据块</li>
+</ul>
+</li>
+<li>若块大小相对于Cache总容量来说太大的话，命中率将降低<ul>
+<li>Cache块数太少</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="image-20231207190525291.png" /></p>
+<h2 id="_13">块替换策略<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li>直接映射：不需要选择（有唯一的位置）</li>
+</ul>
+<ul>
+<li>全相联映射，N路组相联映射？</li>
+</ul>
+<ul>
+<li>
+<p>最近最少使用LRU</p>
+<ul>
+<li>满足程序局部性要求</li>
+<li>有较高命中率</li>
+<li>硬件实现复杂</li>
+</ul>
+<p><img alt="" src="image-20231207190812561.png" /></p>
+<ul>
+<li>用一个链表想这件事，命中的块要放到链表头</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>先进先出FIFO</p>
+<ul>
+<li>满足时间局部性</li>
+<li>实现比较简单</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>随机替换RAND</p>
+<ul>
+<li>实现简单</li>
+<li>命中率也不太低</li>
+</ul>
+</li>
+</ul>
+<h2 id="cache_6">多级Cache<a class="headerlink" href="#cache_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>采用两级或更多级cache来提高命中率<ul>
+<li>增加了用户的选择（？）</li>
+</ul>
+</li>
+<li>将Cache分解为指令Cache和数据Cache</li>
+</ul>
+<h2 id="cache_7">Cache接入系统的体系结构<a class="headerlink" href="#cache_7" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231207191047081.png" /></p>
+<p><img alt="" src="image-20231207191103256.png" /></p>
+<h2 id="mesi">多核一致性保证策略（MESI）<a class="headerlink" href="#mesi" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231207191209295.png" /></p>
+<p><img alt="" src="image-20231207191332243.png" /></p>
 
 
 
