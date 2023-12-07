@@ -9,22 +9,22 @@
       
       
       
+        <link rel="prev" href="../cache/">
       
-        <link rel="next" href="U2/pipeline/">
       
-      <link rel="icon" href="assets/favicon.jpg">
+      <link rel="icon" href="../../assets/favicon.jpg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>计算机组成原理 - Lecture Notes for Computer Organization and Design on 2023Fall</title>
+        <title>VIRTUAL MEMORY - Lecture Notes for Computer Organization and Design on 2023Fall</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -40,7 +40,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -83,7 +83,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="Lecture Notes for Computer Organization and Design on 2023Fall" class="md-header__button md-logo" aria-label="Lecture Notes for Computer Organization and Design on 2023Fall" data-md-component="logo">
+    <a href="../.." title="Lecture Notes for Computer Organization and Design on 2023Fall" class="md-header__button md-logo" aria-label="Lecture Notes for Computer Organization and Design on 2023Fall" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              计算机组成原理
+              VIRTUAL MEMORY
             
           </span>
         </div>
@@ -194,15 +194,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Intro
       </a>
     </li>
@@ -218,7 +216,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="U2/pipeline/" class="md-tabs__link">
+      <a href="../../U2/pipeline/" class="md-tabs__link">
         第二单元
       </a>
     </li>
@@ -228,13 +226,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="U3/dram/" class="md-tabs__link">
+      <a href="../dram/" class="md-tabs__link md-tabs__link--active">
         第三单元
       </a>
     </li>
@@ -262,7 +262,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Lecture Notes for Computer Organization and Design on 2023Fall" class="md-nav__button md-logo" aria-label="Lecture Notes for Computer Organization and Design on 2023Fall" data-md-component="logo">
+    <a href="../.." title="Lecture Notes for Computer Organization and Design on 2023Fall" class="md-nav__button md-logo" aria-label="Lecture Notes for Computer Organization and Design on 2023Fall" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -279,16 +279,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
       
       
         
@@ -300,12 +298,12 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href=".">Intro</a>
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../..">Intro</a>
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           Intro
@@ -363,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="U2/pipeline/" class="md-nav__link">
+      <a href="../../U2/pipeline/" class="md-nav__link">
         Pipeline
       </a>
     </li>
@@ -377,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="U2/hazards/" class="md-nav__link">
+      <a href="../../U2/hazards/" class="md-nav__link">
         Hazards
       </a>
     </li>
@@ -391,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="U2/exception/" class="md-nav__link">
+      <a href="../../U2/exception/" class="md-nav__link">
         Exception
       </a>
     </li>
@@ -411,14 +409,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
         
@@ -437,7 +437,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           第三单元
@@ -450,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="U3/dram/" class="md-nav__link">
+      <a href="../dram/" class="md-nav__link">
         DRAM
       </a>
     </li>
@@ -464,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="U3/sram/" class="md-nav__link">
+      <a href="../sram/" class="md-nav__link">
         SRAM
       </a>
     </li>
@@ -478,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="U3/cache/" class="md-nav__link">
+      <a href="../cache/" class="md-nav__link">
         CACHE
       </a>
     </li>
@@ -490,11 +490,130 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="U3/vm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          VIRTUAL MEMORY
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         VIRTUAL MEMORY
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    为什么需要虚拟内存？
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么需要虚拟内存？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    物理内存访问
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    虚拟内存访问
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    两个问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    虚拟存储器的目的
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    虚拟内存与Cache的比较
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    页表
+  </a>
+  
+    <nav class="md-nav" aria-label="页表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    页式存储管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    页表大小
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    页式虚拟存储器的访问过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    快表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -523,8 +642,103 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    为什么需要虚拟内存？
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么需要虚拟内存？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    物理内存访问
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    虚拟内存访问
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    两个问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    虚拟存储器的目的
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    虚拟内存与Cache的比较
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    页表
+  </a>
+  
+    <nav class="md-nav" aria-label="页表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    页式存储管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    页表大小
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    页式虚拟存储器的访问过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    快表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -540,8 +754,125 @@
                   
 
 
-<h1 id="_1">计算机组成原理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>ICS -&gt; <strong>COD</strong> -&gt; Architecture</p>
+  <h1>VIRTUAL MEMORY</h1>
+
+<h2 id="_1">为什么需要虚拟内存？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">物理内存访问<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="image-20231207192638715.png" /></p>
+<h3 id="_3">虚拟内存访问<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="image-20231207192714279.png" /></p>
+<h3 id="_4">两个问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>如果程序的工作集的大小大于物理内存大小，程序还能执行吗？<ul>
+<li>缓存的思想（虚拟化）</li>
+</ul>
+</li>
+<li>如果多个程序共享使用，那么<ul>
+<li>程序员在编程时，怎么知道在哪儿分配内存？</li>
+<li>多个程序需要共享时，怎么办？</li>
+<li>多个程序同时执行时，某进程不想让另一个进程看到或者修改本进程的内容，怎么办？</li>
+<li>思想：<strong>程序员编程使用的空间和程序运行空间相互独立</strong></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>独立的逻辑地址空间</li>
+</ul>
+<p><img alt="" src="image-20231207192942744.png" /></p>
+<ul>
+<li>实现内存共享</li>
+</ul>
+<p><img alt="" src="image-20231207193024794.png" /></p>
+<ul>
+<li>实现内存的保护</li>
+</ul>
+<p><img alt="" src="image-20231207193049778.png" /></p>
+<h3 id="_5">虚拟存储器的目的<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="image-20231207193142044.png" /></p>
+<h2 id="cache">虚拟内存与Cache的比较<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="image-20231207193321084.png" /></p>
+<ul>
+<li>Cache一般一个line是64B，页表一般一个页为4KB</li>
+</ul>
+<h2 id="_6">页表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">页式存储管理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>将主存和虚存划分为固定大小的页</li>
+</ul>
+<ul>
+<li>以页为单位进行管理和数据交换</li>
+<li>虚地址=虚页号+页内地址<ul>
+<li>Virtual Address (VA)</li>
+<li>Virtual Page Numbers (VPN)</li>
+<li>Virtual Page Offset (VPO)</li>
+</ul>
+</li>
+<li>实地址=实页号+页内地址 (PPO = VPO)</li>
+<li>通过页表进行管理<ul>
+<li><strong>页表基地址寄存器</strong>（在CPU里，例如satp，cr3）（CPU先知道页表在哪里）</li>
+<li>实页号</li>
+<li>控制位</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="image-20231207194611423.png" /></p>
+<ul>
+<li>利用虚页号（+页表基地址）来进行索引</li>
+</ul>
+<h3 id="_8">页表大小<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>与虚页数直接相关，但是<ul>
+<li>虽然理论上每个进程的逻辑空间很大，但其实大部分应该是不活跃的</li>
+<li>实际调入到内存的内容不可能超过物理存储空间</li>
+</ul>
+</li>
+<li>如何减少页表本身所占的空间<ul>
+<li>层次页表（hierarchical page table）</li>
+<li>反转页表（inverted page table）</li>
+</ul>
+</li>
+</ul>
+<h3 id="_9">页式虚拟存储器的访问过程<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>得到程序给出的虚地址；</li>
+<li>由虚地址得到虚页号</li>
+<li>访问页表，得到对应的实页号；</li>
+<li>若该页已经在内存中，则根据实页号得到实地址，访问内存；</li>
+<li><strong>否则，启动I/O，读出对应页装入主存，再进行访问（Page fault）</strong></li>
+</ol>
+<h3 id="_10">快表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="image-20231207195618129.png" /></p>
+<ul>
+<li>是一个硬件，在MMU里面</li>
+<li>转换旁路缓冲（TLB，Translation Lookaside Buffer），<strong>加快地址的转换</strong></li>
+</ul>
+<ul>
+<li>TLB缺失将造成：<ul>
+<li>流水线停止</li>
+<li>通知操作系统</li>
+<li>读页表</li>
+<li>将表项写入TLB</li>
+<li>返回到用户程序</li>
+<li>重新访问</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>尽量减少缺失：<ul>
+<li><strong>多路组相联</strong></li>
+<li>尽量提高TLB的容量</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="image-20231207195848927.png" /></p>
+<p><img alt="" src="image-20231207195906749.png" /></p>
+<ul>
+<li>两个步骤<ul>
+<li>拿到Physical Address</li>
+<li>用Physical Address去访问真正的内存空间</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -551,7 +882,7 @@
     
         <div class="md-source-date">
             <small>
-                作者: <span class='git-page-authors git-authors'><a href='mailto:juanli-w21@mails.tsinghua.edu.cn'>汪隽立</a></span>
+                作者: <span class='git-page-authors git-authors'></span>
             </small>
         </div>
     
@@ -592,10 +923,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "navigation.tabs", "navigation.indexes", "navigation.instant"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tabs", "navigation.indexes", "navigation.instant"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>
