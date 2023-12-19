@@ -1,16 +1,18 @@
 site_name: Lecture Notes for Computer Organization and Design on 2023Fall
 
 nav:
-  - 计算机组成原理:
+  - 前言:
     - index.md
   - 第二单元:
-    - Pipeline: U2/pipeline.md
-    - Hazards: U2/hazards.md
-    - Exception: U2/exception.md
+    - 流水线CPU: U2/pipeline.md
+    - 冲突: U2/hazards.md
+    - 异常: U2/exception.md
   - 第三单元: 
     - DRAM: U3/dram.md
     - SRAM: U3/sram.md
-    - CACHE: U3/cache.md
+    - Cache: U3/cache.md
+    - 虚拟内存: U3/vm.md
+    - 外存储器: U3/disk.md
 
 theme:
   name: material
@@ -63,6 +65,8 @@ markdown_extensions:
   - pymdownx.tilde
   - md_in_html
   - meta
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.highlight:
       linenums: true
   - pymdownx.keys
@@ -89,3 +93,7 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - attr_list
   - mdx_truly_sane_lists
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
