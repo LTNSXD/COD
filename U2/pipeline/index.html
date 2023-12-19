@@ -19,7 +19,7 @@
     
     
       
-        <title>Pipeline - Lecture Notes for Computer Organization and Design on 2023Fall</title>
+        <title>流水线CPU - Lecture Notes for Computer Organization and Design on 2023Fall</title>
       
     
     
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pipeline
+              流水线CPU
             
           </span>
         </div>
@@ -203,7 +203,7 @@
   
     <li class="md-tabs__item">
       <a href="../.." class="md-tabs__link">
-        Intro
+        前言
       </a>
     </li>
   
@@ -301,14 +301,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../..">Intro</a>
+          <a href="../..">前言</a>
           
         </div>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
-          Intro
+          前言
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -375,12 +375,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Pipeline
+          流水线CPU
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Pipeline
+        流水线CPU
       </a>
       
         
@@ -442,7 +442,7 @@
   
     <li class="md-nav__item">
       <a href="../hazards/" class="md-nav__link">
-        Hazards
+        冲突
       </a>
     </li>
   
@@ -456,7 +456,7 @@
   
     <li class="md-nav__item">
       <a href="../exception/" class="md-nav__link">
-        Exception
+        异常
       </a>
     </li>
   
@@ -485,6 +485,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
+        
+          
         
           
         
@@ -543,7 +545,7 @@
   
     <li class="md-nav__item">
       <a href="../../U3/cache/" class="md-nav__link">
-        CACHE
+        Cache
       </a>
     </li>
   
@@ -557,7 +559,21 @@
   
     <li class="md-nav__item">
       <a href="../../U3/vm/" class="md-nav__link">
-        VIRTUAL MEMORY
+        虚拟内存
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../U3/disk/" class="md-nav__link">
+        外存储器
       </a>
     </li>
   
@@ -708,10 +724,10 @@
 <p><img alt="" src="../assets/2.jpg" /></p>
 <ul>
 <li>如果各阶段的时间相等，都为t，则n条指令所用的时间为：<ul>
-<li>顺序执行：<span class="arithmatex"><span class="MathJax_Preview">T=3nt</span><script type="math/tex">T=3nt</script></span></li>
-<li>一次重叠执行：<span class="arithmatex"><span class="MathJax_Preview">T=(1+2n)t</span><script type="math/tex">T=(1+2n)t</script></span></li>
-<li>两次重叠执行：<span class="arithmatex"><span class="MathJax_Preview">T=(n+2)t</span><script type="math/tex">T=(n+2)t</script></span></li>
-<li>注意<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>前的系数和常数的变化规律</li>
+<li>顺序执行：<span class="arithmatex">\(T=3nt\)</span></li>
+<li>一次重叠执行：<span class="arithmatex">\(T=(1+2n)t\)</span></li>
+<li>两次重叠执行：<span class="arithmatex">\(T=(n+2)t\)</span></li>
+<li>注意<span class="arithmatex">\(n\)</span>前的系数和常数的变化规律</li>
 </ul>
 </li>
 <li></li>
@@ -770,6 +786,10 @@
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
       
     
   </body>

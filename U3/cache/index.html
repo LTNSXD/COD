@@ -19,7 +19,7 @@
     
     
       
-        <title>CACHE - Lecture Notes for Computer Organization and Design on 2023Fall</title>
+        <title>Cache - Lecture Notes for Computer Organization and Design on 2023Fall</title>
       
     
     
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CACHE
+              Cache
             
           </span>
         </div>
@@ -203,7 +203,7 @@
   
     <li class="md-tabs__item">
       <a href="../.." class="md-tabs__link">
-        Intro
+        前言
       </a>
     </li>
   
@@ -301,14 +301,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../..">Intro</a>
+          <a href="../..">前言</a>
           
         </div>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
-          Intro
+          前言
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -364,7 +364,7 @@
   
     <li class="md-nav__item">
       <a href="../../U2/pipeline/" class="md-nav__link">
-        Pipeline
+        流水线CPU
       </a>
     </li>
   
@@ -378,7 +378,7 @@
   
     <li class="md-nav__item">
       <a href="../../U2/hazards/" class="md-nav__link">
-        Hazards
+        冲突
       </a>
     </li>
   
@@ -392,7 +392,7 @@
   
     <li class="md-nav__item">
       <a href="../../U2/exception/" class="md-nav__link">
-        Exception
+        异常
       </a>
     </li>
   
@@ -423,6 +423,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
+        
+          
         
           
         
@@ -488,12 +490,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          CACHE
+          Cache
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        CACHE
+        Cache
       </a>
       
         
@@ -686,7 +688,21 @@
   
     <li class="md-nav__item">
       <a href="../vm/" class="md-nav__link">
-        VIRTUAL MEMORY
+        虚拟内存
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disk/" class="md-nav__link">
+        外存储器
       </a>
     </li>
   
@@ -900,7 +916,7 @@
                   
 
 
-  <h1>CACHE</h1>
+  <h1>Cache</h1>
 
 <h2 id="_1">程序的运行局部性原理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
@@ -991,7 +1007,7 @@
 <li>缺失损失（Miss Penalty）：替换较高层次数据块的时间+将该块交付给处理器的时间（Dram+Sram）</li>
 </ul>
 </li>
-<li>命中时间<span class="arithmatex"><span class="MathJax_Preview">\ll</span><script type="math/tex">\ll</script></span>缺失损失</li>
+<li>命中时间<span class="arithmatex">\(\ll\)</span>缺失损失</li>
 <li>平均访问时间=HR*命中时间+（1-HR）*缺失损失</li>
 </ul>
 <h2 id="_4">参数典型数值<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -1058,7 +1074,7 @@
 <p><img alt="" src="image-20231207125846017.png" /></p>
 <ul>
 <li>块大小：4Bytes（2位offset）</li>
-<li>每一组有<span class="arithmatex"><span class="MathJax_Preview">2^8=256</span><script type="math/tex">2^8=256</script></span>个块，每个块大小为4Bytes+22位Tag+1位Valid</li>
+<li>每一组有<span class="arithmatex">\(2^8=256\)</span>个块，每个块大小为4Bytes+22位Tag+1位Valid</li>
 <li>上图的一横行叫做一个set，一个set中有4个way</li>
 </ul>
 <p><img alt="" src="image-20231207130257447.png" /></p>
@@ -1118,7 +1134,7 @@
 <p>LYY：No write allocate下的write invalidate这一列是在cache中找到了，且valid为1，那么写以后需要把valid置为0（因为cache没有更新）</p>
 <h2 id="_11">提高存储访问的性能<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <ul>
-<li>平均访问时间=命中时间<span class="arithmatex"><span class="MathJax_Preview">\times</span><script type="math/tex">\times</script></span>命中率+缺失损失<span class="arithmatex"><span class="MathJax_Preview">\times</span><script type="math/tex">\times</script></span>缺失率<ul>
+<li>平均访问时间=命中时间<span class="arithmatex">\(\times\)</span>命中率+缺失损失<span class="arithmatex">\(\times\)</span>缺失率<ul>
 <li><strong>提高命中率</strong></li>
 <li>缩短缺失损失</li>
 <li>提高Cache本身的速度</li>
@@ -1292,6 +1308,10 @@
     
     
       <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
       
     
   </body>
